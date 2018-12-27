@@ -62,18 +62,15 @@ function total() {
 
 function removeFromCart(item) {
   // write your code here;
-  var searchedItem = "";
   var found = false;
   for(var i = 0; i < cart.length; i++) {
-    searchedItem = cart[i].itemName;
-    if (searchedItem === item) { // Item is found on the cart.
+    if (cart[i].itemName === item) { // Item is found on the cart.
+        //console.log(`found it ${cart[i].itemName}.`);
+        cart.splice(i, 1);
         found = true;
-        cart.splice(i);
-        break;
-    } else {
-      found = false;
-      break;
-    }
+        break; 
+    } 
+    found = false;
   }
   if (found) {
     return cart;
